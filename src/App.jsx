@@ -9,6 +9,9 @@ function App() {
   return (
     <>
       <h1>Food Ordering App</h1>
+            <h1>Food</h1>
+      <h1>Ordering</h1>
+      <h1>App</h1>
     </>
   )
 }
