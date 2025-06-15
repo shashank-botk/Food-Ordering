@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import { CategoryTabs } from './components/CategoryTabs';
 import { FilterButtons } from './components/FilterButtons';
+import MenuCards from './components/MenuCards';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           {/* Menu items will be rendered here */}
         </div>
       </main>
+          <>
+      <MenuCards />
+    </>
     </div>
   );
 }
