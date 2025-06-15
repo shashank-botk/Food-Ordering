@@ -1,3 +1,5 @@
+
+
 const MenuCards = () => {
   const menuItems = [
     {
@@ -112,21 +114,23 @@ const MenuCards = () => {
     },
   ];
 
+
   return (
-    <div className="flex flex-col items-center justify-center gap-6 p-8">
+    < >
+    <div className="flex flex-col items-center justify-center gap-6 p-8 mt-20">
+
+      {/* Render Categories & Assign Refs */}
       {menuItems.map((val, index) => (
         <div
           key={index}
           className="flex w-3/4 flex-col items-center justify-center gap-4"
         >
-          <h2 className="self-start  text-2xl font-bold">
-            {val.category}
-          </h2>
+          <h2 className="self-start text-2xl font-bold">{val.category}</h2>
           <ul className="flex w-full flex-wrap gap-4">
             {val.items.map((item, itemIndex) => (
               <li
-                key={itemIndex}
-                className="flex h-[18vh] w-[22vw] flex-col items-center justify-center rounded-lg border p-6 shadow-md backdrop-blur-md transition-all duration-300 hover:scale-102 hover:bg-zinc-600 hover:text-stone-50"
+              key={itemIndex}
+              className="flex h-[18vh] w-[22vw] flex-col items-center justify-center rounded-lg border p-6 shadow-md backdrop-blur-md transition-all duration-500 ease-in-out hover:scale-102 hover:bg-zinc-600 hover:text-stone-50"
               >
                 <h3 className="text-lg font-semibold">{item.name}</h3>
                 <p className="text-center text-sm">{item.description}</p>
@@ -136,6 +140,7 @@ const MenuCards = () => {
         </div>
       ))}
     </div>
+            </>
   );
 };
 
