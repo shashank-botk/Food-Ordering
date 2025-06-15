@@ -4,12 +4,27 @@
 
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'menuTitle';
+  src: url('https://cdn.prod.website-files.com/6549128db41d15ae06784cbc/65491a8b3e9c55cf79884d3c_apercu-bold.woff2');
+}
+
+@font-face {
+  font-family: 'headTitle';
+  src: url('https://cdn.prod.website-files.com/6549128db41d15ae06784cbc/65491a8b3e9c55cf79884d3c_apercu-bold.woff2');
+}
+
+.customeTextStyle {
+    text-shadow: 4px 3px 0px rgb(40, 39, 39);
+    -webkit-text-stroke: 0.7px black; /* Creates an outline */
+    -webkit-text-fill-color: yellow;
+}
 
 .navbar {
      display: flex;
      align-items: center;
      justify-content: space-between;
-     margin: 15px;
+     /* margin: 15px; */
      padding: 10px 30px;
      border-radius: 0.5rem;
      box-shadow: 0.5px 1px 0  #000;
