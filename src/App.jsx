@@ -6,7 +6,7 @@ import MenuCards from './components/MenuCards';
 
 function App() {
   return (
-    <div className="min-h-screen bg-red-600">
+    <div className="min-h-screen">
       <Navbar />
       <CategoryTabs />
       <main className="container mx-auto px-4 py-6 md:px-8 max-w-7xl">

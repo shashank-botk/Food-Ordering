@@ -61,18 +61,20 @@
 
 
 input {
-     width: 230px;
+     width: 300px;
      margin: 2px;
      padding: 0.875rem;
-     font-size: 0.87rem;
+     padding-left: 35px;
+     padding-right: 25px;
+     font-size: 1rem;
      border: 1.5px solid #000;
      border-radius: 0.5rem;
      box-shadow: 1px 1.5px 0 #000;
      outline: none;
      transition: ease 0.25s;
+     color: red;
 }
 
-input::target-text
 
 input::placeholder {
      color: black;
@@ -81,6 +83,7 @@ input::placeholder {
      font-family: Verdana, Geneva, Tahoma, sans-serif;
      letter-spacing: 1px;
      word-spacing: 1.5px;
+     text-align: center;
 }
 
 input:focus {
