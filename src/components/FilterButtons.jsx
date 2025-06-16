@@ -13,7 +13,7 @@ export function FilterButtons() {
 
   return (
     <div
-      className="mb-[5px] flex flex-wrap justify-center gap-[12px] py-[15px]"
+      className="mb-[5px] flex flex-wrap justify-center gap-[12px] py-[15px] pt-[0px]"
       id="filters"
     >
       {filters.map(({ id, label, icon }) => (

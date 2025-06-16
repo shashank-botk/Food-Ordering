@@ -33,11 +33,10 @@ const MenuCards = () => {
               <h1 className='text-orange-400 font-bold font-fun'>{val.category}</h1>
               {/* Change Arrow Based on Open/Closed State */}
               <img
-                className={`h-10 w-10 transition-transform duration-500 ease-in-out ${
-                  openCategories.includes(val.category)
-                    ? 'rotate-180'
-                    : 'rotate-0'
-                }`}
+                className={`h-10 w-10 transition-transform duration-500 ease-in-out ${openCategories.includes(val.category)
+                  ? 'rotate-180'
+                  : 'rotate-0'
+                  }`}
                 src="https://img.icons8.com/?size=100&id=5fN9OjLoJlzY&format=png&color=000000"
                 alt="Toggle"
               />
@@ -46,11 +45,10 @@ const MenuCards = () => {
 
           {/* Show Menu Items Only When Category is Open */}
           <div
-            className={`transform overflow-hidden transition-all duration-500 ease-in-out ${
-              openCategories.includes(val.category)
-                ? 'max-h-screen scale-y-100 opacity-100'
-                : 'max-h-0 scale-y-0 opacity-0'
-            }`}
+            className={`transform overflow-hidden transition-all duration-500 ease-in-out ${openCategories.includes(val.category)
+              ? 'max-h-screen scale-y-100 opacity-100'
+              : 'max-h-0 scale-y-0 opacity-0'
+              }`}
           >
             <ul className="mt-4 flex w-full flex-wrap justify-center gap-4">
               {val.items.map((item, itemIndex) => (
