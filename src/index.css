@@ -1,24 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
-
+/*** @type {import('tailwindcss').Config} */
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Borel&family=Chicle&family=Funnel+Display:wght@300..800&family=Grenze+Gotisch:wght@100..900&family=Pirata+One&family=Playwrite+CU+Guides&family=Yusei+Magic&display=swap');
 @import "tailwindcss";
+
 
 @font-face {
   font-family: 'menuTitle';
   src: url('https://cdn.prod.website-files.com/6549128db41d15ae06784cbc/65491a8b3e9c55cf79884d3c_apercu-bold.woff2');
 }
 
-@font-face {
-  font-family: 'headTitle';
-  src: url('https://cdn.prod.website-files.com/6549128db41d15ae06784cbc/65491a8b3e9c55cf79884d3c_apercu-bold.woff2');
+@layer utilities {
+  .font-fun {
+    font-family: 'Yusei Magic', sans-serif;
+  }
 }
 
+
+/* 
 .customeTextStyle {
     text-shadow: 4px 3px 0px rgb(40, 39, 39);
-    -webkit-text-stroke: 0.7px black; /* Creates an outline */
+    -webkit-text-stroke: 0.7px black; 
     -webkit-text-fill-color: yellow;
 }
+
+.customeTextStyle2 {
+    -webkit-text-stroke: 0.7px black; 
+    -webkit-text-fill-color: yellow;
+} */
 
 .navbar {
      display: flex;

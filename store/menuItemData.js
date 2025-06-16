@@ -109,4 +109,41 @@ export const menuItems = [
         },
       ],
     },
+    {
+      "category": "quick-bites",
+  "items": [
+    {
+      "name": "French Fries",
+      "description": "Crispy golden potato fries served with ketchup."
+    },
+    {
+      "name": "Mozzarella Sticks",
+      "description": "Deep-fried mozzarella cheese sticks with marinara sauce."
+    },
+    {
+      "name": "Chicken Nuggets",
+      "description": "Bite-sized crispy chicken nuggets with a choice of dip."
+    },
+    {
+      "name": "Spring Rolls",
+      "description": "Vegetable-stuffed rolls served with a tangy dipping sauce."
+    },
+    {
+      "name": "Garlic Bread",
+      "description": "Oven-toasted bread with garlic butter and herbs."
+    },
+    {
+      "name": "Nachos",
+      "description": "Crunchy nachos topped with melted cheese and jalapeños."
+    },
+    {
+      "name": "Onion Rings",
+      "description": "Crispy battered onion rings with a side of spicy mayo."
+    },
+    {
+      "name": "Popcorn Chicken",
+      "description": "Tender fried chicken bites seasoned to perfection."
+    }
+  ]
+    },
   ];
