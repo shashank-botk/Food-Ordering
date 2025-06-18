@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  background-image: url('/public/images/globalBackground.webp');
+  background-image: url('/images/globalBackground.webp');
   min-height: 100vh;
   background-color: #ffedd5;
   background-position: center;

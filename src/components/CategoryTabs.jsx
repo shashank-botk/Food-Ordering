@@ -4,7 +4,7 @@ import { categories } from '../../store/categoryData';
 const CategoryTabs = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0].id);
   return (
-    <div className="category-container sticky top-[106px] mx-[15px] my-[5px] flex items-center gap-[8px] py-[5px] whitespace-nowrap z-50">
+    <div className="category-container sticky top-[106px] z-40 mx-[15px] my-[5px] flex items-center gap-[8px] py-[5px] whitespace-nowrap">
       {categories.map(({ id, label, icon }) => (
         <button
           key={id}

@@ -1,9 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { menuItems } from '../../store/menuItemData';
 import { FilterButtons } from './FilterButtons';
 
-const MenuCards = () => {
+const MenuCards = ({ selectedCategory }) => {
   const [openCategories, setOpenCategories] = useState([]);
+  const [filteredMenuItems, setFilteredMenuItems] = useState(menuItems);
+
+  useEffect(() => {
+    if (selectedCategory) {
+      console.log('Selected Category:', selectedCategory); // Debug log
+      const filtered = menuItems.filter(
+        (item) => item.category === selectedCategory,
+      );
+      console.log('Filtered Items:', filtered); // Debug log
+      setFilteredMenuItems(filtered);
+      setOpenCategories([selectedCategory]);
+    } else {
+      setFilteredMenuItems(menuItems);
+    }
+  }, [selectedCategory]);
 
   const toggleCategory = (category) => {
     setOpenCategories((prev) =>
@@ -13,13 +28,17 @@ const MenuCards = () => {
     );
   };
 
+  // Add debug logs
+  console.log('Current filteredMenuItems:', filteredMenuItems);
+  console.log('Current openCategories:', openCategories);
+
   return (
     <div className="flex flex-col items-center justify-center gap-6 p-8">
       <div className="py-2">
         <FilterButtons />
       </div>
 
-      {menuItems.map((val, index) => (
+      {filteredMenuItems.map((val, index) => (
         <div
           key={index}
           className="mb-5 flex w-3/4 flex-col items-center justify-center gap-4"
@@ -27,16 +46,19 @@ const MenuCards = () => {
           {/* Category Header with Toggle Button */}
           <div className="flex w-full items-center justify-between">
             <button
-              className=" flex w-full justify-between rounded-2xl border-5 border-double p-3 text-left text-5xl text-yellow-300 uppercase transition hover:border-transparent hover:bg-white"
+              className="flex w-full justify-between rounded-2xl border-5 border-double p-3 text-left text-5xl text-yellow-300 uppercase transition hover:border-transparent hover:bg-white"
               onClick={() => toggleCategory(val.category)}
             >
-              <h1 className='text-orange-400 font-bold font-fun'>{val.category}</h1>
+              <h1 className="font-fun font-bold text-orange-400">
+                {val.category}
+              </h1>
               {/* Change Arrow Based on Open/Closed State */}
               <img
-                className={`h-10 w-10 transition-transform duration-500 ease-in-out ${openCategories.includes(val.category)
-                  ? 'rotate-180'
-                  : 'rotate-0'
-                  }`}
+                className={`h-10 w-10 transition-transform duration-500 ease-in-out ${
+                  openCategories.includes(val.category)
+                    ? 'rotate-180'
+                    : 'rotate-0'
+                }`}
                 src="https://img.icons8.com/?size=100&id=5fN9OjLoJlzY&format=png&color=000000"
                 alt="Toggle"
               />
@@ -45,10 +67,11 @@ const MenuCards = () => {
 
           {/* Show Menu Items Only When Category is Open */}
           <div
-            className={`transform overflow-hidden transition-all duration-500 ease-in-out ${openCategories.includes(val.category)
-              ? 'max-h-screen scale-y-100 opacity-100'
-              : 'max-h-0 scale-y-0 opacity-0'
-              }`}
+            className={`transform overflow-hidden transition-all duration-500 ease-in-out ${
+              openCategories.includes(val.category)
+                ? 'max-h-screen scale-y-100 opacity-100'
+                : 'max-h-0 scale-y-0 opacity-0'
+            }`}
           >
             <ul className="mt-4 flex w-full flex-wrap justify-center gap-4">
               {val.items.map((item, itemIndex) => (

@@ -110,7 +110,7 @@ export const menuItems = [
     ],
   },
   {
-    category: 'quick-bites',
+    category: 'quick-bite',
     items: [
       {
         name: 'French Fries',
