@@ -20,11 +20,11 @@ html {
 }
 
 body {
-  background-image: url('/images/globalBackground.webp');
-  min-height: 100vh;
+  /* background-image: url('/images/globalBackground.webp'); */
+  /* min-height: 100vh; */
   background-color: #ffedd5;
-  background-position: center;
-  background-size: cover;
+  /* background-position: center; */
+  /* background-size: cover; */
 }
 
 ::-webkit-scrollbar {

@@ -5,16 +5,23 @@ import MenuCards from './components/MenuCards';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
 
   const handleCategorySelect = (categoryId) => {
-    console.log('Category selected:', categoryId); // Debug log
     setSelectedCategory(categoryId);
   };
 
   return (
     <>
-      <Navbar onCategorySelect={handleCategorySelect} />
-      <CategoryTabs />
+      <Navbar
+        onCategorySelect={handleCategorySelect}
+        onSearch={handleSearch}
+      />
+      <CategoryTabs selectedCategory={selectedCategory} />
       <main className="container mx-auto max-w-7xl px-4 py-6 pb-0 md:px-8">
         <div className="font-fun flex flex-col items-center">
           <h1 className="text-center text-5xl font-black text-gray-900">
@@ -32,7 +39,10 @@ function App() {
           </div>
         </div>
       </main>
-      <MenuCards selectedCategory={selectedCategory} />
+      <MenuCards
+        selectedCategory={selectedCategory}
+        searchQuery={searchQuery}
+      />
     </>
   );
 }
