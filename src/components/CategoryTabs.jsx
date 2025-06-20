@@ -14,7 +14,9 @@ const CategoryTabs = () => {
             setActiveCategory(categoryId);
 
             // Scroll the active tab into view
-            const activeTab = document.querySelector(`[data-tab="${categoryId}"]`);
+            const activeTab = document.querySelector(
+              `[data-tab="${categoryId}"]`,
+            );
             if (activeTab) {
               activeTab.scrollIntoView({
                 behavior: 'smooth',
@@ -28,7 +30,7 @@ const CategoryTabs = () => {
       {
         rootMargin: '-50% 0px -50% 0px',
         threshold: 0,
-      }
+      },
     );
 
     // Observe all menu sections
@@ -47,7 +49,8 @@ const CategoryTabs = () => {
     if (section) {
       const headerOffset = 120; // Adjust based on your header height
       const elementPosition = section.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
@@ -63,8 +66,9 @@ const CategoryTabs = () => {
           key={id}
           type="button"
           data-tab={id}
-          className={`category-tab flex cursor-pointer items-center gap-[4px] rounded-[8px] border-2 border-[#d1d5db] bg-white px-[0.8rem] py-[0.5rem] text-[0.9rem] font-semibold text-[#4b5563] shadow-[0_2px_8px_rgba(0,0,0,0.15)] transition-all duration-300 ease-in-out select-none ${activeCategory === id ? 'active' : ''
-            }`}
+          className={`category-tab flex cursor-pointer items-center gap-[4px] rounded-[8px] border-2 border-[#d1d5db] bg-white px-[0.8rem] py-[0.5rem] text-[0.9rem] font-semibold text-[#4b5563] shadow-[0_2px_8px_rgba(0,0,0,0.15)] transition-all duration-300 ease-in-out select-none ${
+            activeCategory === id ? 'active' : ''
+          }`}
           onClick={() => handleCategoryClick(id)}
         >
           <span className="text-[1rem]">{icon}</span>
