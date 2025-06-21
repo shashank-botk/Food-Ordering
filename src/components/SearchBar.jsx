@@ -12,14 +12,12 @@ const SearchBar = ({ onCategorySelect, onSearch }) => {
       setDishSuggestions([]);
       return;
     }
-    // Flatten all dishes with their category
     const allDishes = menuItems.flatMap((category) =>
       category.items.map((dish) => ({
         ...dish,
         categoryId: category.category,
       })),
     );
-    // Filter dishes by name only (not description)
     const filtered = allDishes.filter((dish) =>
       dish.name.toLowerCase().includes(searchQuery.toLowerCase()),
     );
@@ -31,11 +29,10 @@ const SearchBar = ({ onCategorySelect, onSearch }) => {
     setShowSuggestions(true);
   };
 
-  // Handle Enter key for search
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       setShowSuggestions(false);
-      onCategorySelect(null); // Show all relevant categories
+      onCategorySelect(null);
       onSearch(searchQuery);
       inputRef.current.blur();
     }
@@ -49,27 +46,27 @@ const SearchBar = ({ onCategorySelect, onSearch }) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-[280px] max-w-full">
       <input
         ref={inputRef}
         type="text"
         value={searchQuery}
         onChange={handleSearch}
         onKeyDown={handleKeyDown}
-        placeholder="Search for dishes..."
+        placeholder="Search Your Cuisine..."
         aria-label="Search"
-        className="placeholder:word-spacing-[1.5px] m-[2px] w-[300px] rounded-[0.5rem] border-[1.5px] border-black p-[0.875rem_1.5rem] text-base text-orange-600 shadow-[1px_1.2px_0_#000] transition-all duration-[0.25s] ease-in-out outline-none"
+        className="placeholder:word-spacing-[1.5px] placeholder:translate-y-0.4 w-full rounded-xl border border-red-300 bg-white px-5 py-3 text-base text-red-600 shadow-md transition-all duration-200 outline-none not-placeholder-shown:font-[Verdana,Geneva,Tahoma,sans-serif] not-placeholder-shown:tracking-[1px] placeholder:p-[0_0.3rem] placeholder:font-[Verdana,Geneva,Tahoma,sans-serif] placeholder:font-medium placeholder:tracking-[1px] placeholder:text-gray-600 placeholder:opacity-80 focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
       />
 
       {showSuggestions && dishSuggestions.length > 0 && (
-        <div className="absolute z-50 mt-1.5 ml-[2.2px] max-h-[400px] w-[300px] overflow-y-auto rounded-lg border bg-white shadow-lg">
+        <div className="animate-fade-in absolute left-0 z-50 mt-2 max-h-72 w-full overflow-y-auto rounded-xl border border-orange-100 bg-white shadow-xl">
           {dishSuggestions.map((dish, idx) => (
             <div
               key={idx}
-              className="flex cursor-pointer px-4 py-2 hover:bg-orange-50"
+              className="flex cursor-pointer px-5 py-2 transition-colors hover:bg-gray-100"
               onClick={() => handleDishSelect(dish)}
             >
-              <span className="font-medium text-orange-700">{dish.name}</span>
+              <span className="font-medium text-gray-700">{dish.name}</span>
             </div>
           ))}
         </div>

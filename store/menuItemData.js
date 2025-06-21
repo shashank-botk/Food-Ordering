@@ -61,15 +61,7 @@ export const menuItems = [
         base_price: 100,
         popular: false,
       },
-      {
-        name: 'Chole Bhature',
-        description: 'Spicy chickpea curry served with deep-fried bread.',
-        is_veg: true,
-        available_24h: false,
-        service_hours: '7:00 AM - 11:00 AM',
-        base_price: 150,
-        popular: false,
-      },
+
       {
         name: 'Medu Vada',
         description: 'Crispy lentil doughnuts served with sambar and chutney.',
@@ -277,15 +269,6 @@ export const menuItems = [
         available_24h: true,
         service_hours: '',
         base_price: 160,
-        popular: false,
-      },
-      {
-        name: 'Sprouted Moong Salad',
-        description: 'Sprouted green gram with lemon and spices.',
-        is_veg: true,
-        available_24h: true,
-        service_hours: '',
-        base_price: 150,
         popular: false,
       },
       {
@@ -610,7 +593,7 @@ export const menuItems = [
         popular: true,
       },
       {
-        name: 'Chicken 65 (Chinese Style)',
+        name: 'Chicken 65',
         description: 'Crispy fried chicken with Indo-Chinese spices.',
         is_veg: false,
         available_24h: true,

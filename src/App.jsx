@@ -17,8 +17,13 @@ function App() {
 
   return (
     <>
-      <Navbar onCategorySelect={handleCategorySelect} onSearch={handleSearch} />
-      <CategoryTabs selectedCategory={selectedCategory} />
+      <div className="sticky top-0 z-99 overflow-y-auto bg-[#fce3c2]">
+        <Navbar
+          onCategorySelect={handleCategorySelect}
+          onSearch={handleSearch}
+        />
+        <CategoryTabs selectedCategory={selectedCategory} />
+      </div>
       <main className="container mx-auto max-w-7xl px-4 py-6 pb-0 md:px-8">
         <div className="font-fun flex flex-col items-center">
           <h1 className="text-center text-5xl font-black text-gray-900">

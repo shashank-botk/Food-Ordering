@@ -9,9 +9,9 @@ const Navbar = ({ onCategorySelect, onSearch }) => {
   };
 
   return (
-    <nav className="will-change-opacity sticky top-[15px] z-50 m-[15px] flex items-center justify-between rounded-[0.5rem] border border-black bg-white p-[10px_30px] shadow-[1px_1.2px_0_#000]">
-      <div className="logo">
-        <h1 className="text-darkred no-drag animate-[float_3s_ease-in-out_infinite] cursor-pointer font-mono text-[1.6rem] font-semibold tracking-[2px] transition-transform duration-300 ease-in-out will-change-transform select-none">
+    <nav className="sticky top-4 z-50 mx-4 my-4 flex items-center justify-between rounded-xl border-gray-300 bg-gradient-to-r from-orange-50 to-yellow-50 px-10 py-3 shadow-xl transition-all duration-300">
+      <div className="logo flex items-center gap-2">
+        <h1 className="animate-[float_3s_ease-in-out_infinite] cursor-pointer font-mono text-2xl font-bold tracking-widest text-black drop-shadow-sm select-none">
           LOGO
         </h1>
       </div>
